@@ -27,16 +27,22 @@ function checkAll(callback) {
         });
     }, function (err, updated) {
         state = updated;
+
+        console.log('completed at: ' + new Date() + '\n', state);
+
         callback(err, state);
     });
 }
 
 function runLoop() {
-    checkAll(function (err, stats) {
-        err && console.err(err);
-        console.log(new Date(), '\n', stats);
+    async.map(_.range(1), function (item, callback) {
+        checkAll(callback);
+    }, function (err, results) {
+        console.log('map finished');
 
-        setTimeout(runLoop, 0);
+        err && console.err(err);
+
+        var t = setTimeout(runLoop, 0);
     });
 }
 

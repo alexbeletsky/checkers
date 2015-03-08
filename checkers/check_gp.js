@@ -17,7 +17,7 @@ function check(url, callback) {
         "apiVersion":"v1"
     };
 
-    request.post({url: apiUrl, body: body, json: true}, callback);
+    request.post({url: apiUrl, body: body, json: true, timeout: 3000}, callback);
 
 }
 
