@@ -35,7 +35,7 @@ function checkAll(callback) {
 }
 
 function runLoop() {
-    async.map(_.range(1), function (item, callback) {
+    async.map(_.range(8), function (item, callback) {
         checkAll(callback);
     }, function (err, results) {
         console.log('map finished');
