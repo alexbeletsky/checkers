@@ -4,4 +4,5 @@ module.exports = {
     linkedin: require('./check_ln'),
     pinterest: require('./check_pn'),
     twitter: require('./check_tw'),
+    stumbleupon: require('./check_st')
 };
