@@ -34,7 +34,7 @@ function checkAll(callback) {
 function runLoop() {
     checkAll(function (err, stats) {
         err && console.err(err);
-        console.log(new Date(), stats);
+        console.log(new Date(), '\n', stats);
 
         setTimeout(runLoop, 0);
     });
